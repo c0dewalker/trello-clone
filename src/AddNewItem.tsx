@@ -5,9 +5,10 @@ import {AddNewItemForm} from "./AddNewItemForm";
 export type AddNewItemProps = {
     dark?: boolean;
     text: string;
+    onAdd(text: string): void;
 }
 
-export const AddNewItem = ({dark, text}: AddNewItemProps) => {
+export const AddNewItem = ({dark, text, onAdd}: AddNewItemProps) => {
     const [showInput, setShowInput] = useState(false)
 
     if (!showInput) {
@@ -16,6 +17,8 @@ export const AddNewItem = ({dark, text}: AddNewItemProps) => {
     return <AddNewItemForm
         onAdd={(inputValue: string) => {
             setShowInput(false)
+            onAdd(inputValue)
+
         }}
         onClose={() => {
             setShowInput(false)

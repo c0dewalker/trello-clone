@@ -1,8 +1,5 @@
-import {
-    ColumnContainer,
-    ColumnTitle
-} from "./styles"
-import {FC} from "react";
+import { ColumnContainer, ColumnTitle } from "./styles"
+import React, {FC} from "react";
 
 type ColumnProps = {
     text: string;
